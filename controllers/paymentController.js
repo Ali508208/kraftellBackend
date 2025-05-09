@@ -1,5 +1,6 @@
 require("dotenv").config();
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+const Stripe = require("stripe");
+const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
 const Payment = require("../models/paymentModel");
 
 exports.createPaymentIntent = async (req, res) => {
